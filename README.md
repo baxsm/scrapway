@@ -1,36 +1,106 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Scrapway: Web Scraping Workflow Builder & Runner
 
-## Getting Started
+**Scrapway** allows users to create powerful data scraping workflows and execute them either manually or via cron jobs. With an intuitive UI and support for various tasks such as user interactions, data extraction, storage, and result delivery – you can easily automate scraping operations with minimal effort.
 
-First, run the development server:
+## Features ✨
+
+- **Workflow Builder**: Use React Flow to create and design scraping tasks visually.
+- **User Interactions**: Automate tasks like navigating to URLs, filling inputs, clicking elements, and scrolling to specific elements.
+- **Data Extraction**: Extract raw HTML, specific text, or use AI-based extraction techniques.
+- **Data Storage**: Read and write properties from JSON files, or store your scraping results conveniently.
+- **Timing Controls**: Add flexibility by waiting for elements before proceeding with actions.
+- **Result Delivery**: Deliver scraping results via Webhook.
+- **Scheduling**: Set up cron jobs to automate running workflows at specific intervals.
+
+---
+
+## Task List 📝
+
+Here is an overview of the tasks available to be added and run within the workflow:
+
+### User Interactions 🖱️
+
+- `NAVIGATE_URL`: Navigate to a specific URL.
+- `FILL_INPUT`: Fill an input field.
+- `CLICK_ELEMENT`: Simulate a click event on an element.
+- `SCROLL_TO_ELEMENT`: Scroll to a particular element on the page.
+
+### Data Extraction 🛠️
+
+- `PAGE_TO_HTML`: Extract the entire page as HTML.
+- `EXTRACT_TEXT_FROM_ELEMENT`: Extract text from a specific element.
+- `EXTRACT_WITH_AI`: Use AI to extract and analyze content from the page.
+
+### Data Storage 🗃️
+
+- `READ_PROPERTY_FROM_JSON`: Read data from a JSON file.
+- `ADD_PROPERTY_TO_JSON`: Add or update properties in a JSON file.
+
+### Timing Controls ⏳
+
+- `WAIT_FOR_ELEMENT`: Wait for an element to appear before proceeding to the next task.
+
+### Results Delivery 📬
+
+- `DELIVER_VIA_WEBHOOK`: Send the results to a Webhook URL.
+
+---
+
+## Getting Started 🔧
+
+### Prerequisites
+
+Make sure you have the following installed before running the project:
+
+- [Node.js](https://nodejs.org/)
+- npm or yarn
+
+### Installation
+
+Clone the repository and install dependencies:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/your-username/scrapway.git
+cd scrapway
+npm install --legacy-peer-deps
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Running the Project
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To start the project locally:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm start
+```
 
-## Learn More
+Visit `http://localhost:3000` to start building workflows!
 
-To learn more about Next.js, take a look at the following resources:
+### Building for Production
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To create a production build:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run build
+```
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## How to Use 🚴‍♂️
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Open the Workflow Editor**: Use the visual interface based on React Flow to drag and drop tasks into your workflow.
+2. **Define Tasks**: Choose tasks from categories like **User Interactions**, **Data Extraction**, etc.
+3. **Run or Schedule**: Once the workflow is complete, either run it manually or schedule the execution using a cron job.
+
+---
+
+## Screenshots 🖼️
+
+### Workflow Editor
+
+![Home](/public/home.png)
+![Workflows](/public/workflows.png)
+![Workflow Editor](/public/workflows-2.png)
+![Credentials](/public/credentials.png)
+![Billing](/public/billing.png)
+
+---
