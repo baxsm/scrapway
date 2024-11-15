@@ -1,0 +1,9 @@
+{
+  "installCommand": "npm install --legacy-peer-deps",
+  "cron": [
+    {
+      "path": "/api/workflows/cron",
+      "schedule": "* * * * *"
+    }
+  ]
+}

@@ -6,12 +6,12 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "mongodb"
   url      = env("DATABASE_URL")
 }
 
 model Workflow {
-  id            String  @id @default(cuid())
+  id            String  @id @default(cuid()) @map("_id")
   userId        String
   name          String
   description   String?
@@ -36,7 +36,7 @@ model Workflow {
 }
 
 model WorkflowExecution {
-  id         String @id @default(cuid())
+  id         String @id @default(cuid()) @map("_id")
   workflowId String
   userId     String
   trigger    String
@@ -56,7 +56,7 @@ model WorkflowExecution {
 }
 
 model ExecutionPhase {
-  id     String @id @default(cuid())
+  id     String @id @default(cuid()) @map("_id")
   userId String
   status String
   number Int
@@ -78,7 +78,7 @@ model ExecutionPhase {
 }
 
 model ExecutionLog {
-  id       String @id @default(cuid())
+  id       String @id @default(cuid()) @map("_id")
   logLevel String
   message  String
 
@@ -89,12 +89,12 @@ model ExecutionLog {
 }
 
 model UserBalance {
-  userId  String @id
+  userId  String @id @map("_id")
   credits Int    @default(0)
 }
 
 model Credential {
-  id     String @id @default(cuid())
+  id     String @id @default(cuid()) @map("_id")
   userId String
   name   String
   value  String
@@ -105,7 +105,7 @@ model Credential {
 }
 
 model UserPurchase {
-  id          String @id @default(cuid())
+  id          String @id @default(cuid()) @map("_id")
   userId      String
   description String
   amount      Int
