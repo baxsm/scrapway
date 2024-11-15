@@ -60,7 +60,7 @@ Make sure you have the following installed before running the project:
 Clone the repository and install dependencies:
 
 ```bash
-git clone https://github.com/your-username/scrapway.git
+git clone https://github.com/baxsm/scrapway.git
 cd scrapway
 npm install --legacy-peer-deps
 ```
@@ -70,7 +70,7 @@ npm install --legacy-peer-deps
 To start the project locally:
 
 ```bash
-npm start
+npm run dev
 ```
 
 Visit `http://localhost:3000` to start building workflows!
