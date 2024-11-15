@@ -46,7 +46,7 @@ const WorkflowActions: FC<WorkflowActionsProps> = ({
           <DropdownMenuSeparator />
           <DropdownMenuItem
             className="text-destructive flex items-center gap-2"
-            onSelect={() => setIsDeleteDialogOpen(false)}
+            onSelect={() => setIsDeleteDialogOpen(true)}
           >
             <Trash size={16} />
             Delete

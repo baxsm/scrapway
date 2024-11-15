@@ -12,7 +12,7 @@ interface RunButtonProps {
 }
 
 const RunButton: FC<RunButtonProps> = ({ workflowId }) => {
-  const { mutate, isPending } = useMutation({
+  const { mutateAsync, isPending } = useMutation({
     mutationFn: runWorkflow,
     onSuccess: () => {
       toast.success("Workflow started", { id: workflowId });
@@ -22,16 +22,18 @@ const RunButton: FC<RunButtonProps> = ({ workflowId }) => {
     },
   });
 
+  const handleClick = async () => {
+    toast.loading("Scheduling run...", { id: workflowId });
+    await mutateAsync({ workflowId });
+  };
+
   return (
     <Button
       variant="outline"
       size="sm"
       className="flex items-center gap-2"
       disabled={isPending}
-      onClick={() => {
-        toast.loading("Scheduling run...", { id: workflowId });
-        mutate({ workflowId });
-      }}
+      onClick={handleClick}
     >
       <Play size={16} />
       Run

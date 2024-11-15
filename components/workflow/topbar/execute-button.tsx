@@ -17,7 +17,7 @@ const ExecuteButton: FC<ExecuteButtonProps> = ({ workflowId }) => {
   const { toObject } = useReactFlow();
   const generate = useExecutionPlan();
 
-  const { mutate, isPending } = useMutation({
+  const { mutateAsync, isPending } = useMutation({
     mutationFn: runWorkflow,
     onSuccess: () => {
       toast.success("Execution started", { id: "flow-execution" });
@@ -27,16 +27,18 @@ const ExecuteButton: FC<ExecuteButtonProps> = ({ workflowId }) => {
     },
   });
 
+  const handleClick = async () => {
+    const plan = generate();
+    if (!plan) {
+      return;
+    }
+
+    await mutateAsync({ workflowId, flowDefinition: JSON.stringify(toObject()) });
+  };
+
   return (
     <Button
-      onClick={() => {
-        const plan = generate();
-        if (!plan) {
-          return;
-        }
-
-        mutate({ workflowId, flowDefinition: JSON.stringify(toObject()) });
-      }}
+      onClick={handleClick}
       variant="outline"
       className="flex items-center gap-2"
       disabled={isPending}
