@@ -36,7 +36,7 @@ const LastRunDetails: FC<LastRunDetailsProps> = ({
       <div className="flex items-center text-sm gap-2">
         {lastRunAt && (
           <Link
-            href={`/workflow/runs/${id}/${lastRunId}`}
+            href={`/dashboard/workflow/runs/${id}/${lastRunId}`}
             className="flex items-center text-sm gap-2 group"
           >
             <span>Last run:</span>

@@ -33,7 +33,7 @@ const Topbar: FC<TopbarProps> = ({
       <div className="flex flex-1 items-center justify-between gap-1">
         <div className="flex gap-1">
           <TooltipWrapper content="Back">
-            <Button variant="ghost" size="icon" onClick={() => router.push("/workflows")}>
+            <Button variant="ghost" size="icon" onClick={() => router.push("/dashboard/workflows")}>
               <ChevronLeft size={20} />
             </Button>
           </TooltipWrapper>

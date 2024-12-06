@@ -11,10 +11,15 @@ import UserAvailableCreditsBadge from "./user-available-credits-badge";
 const DashboardSidebar: FC = () => {
   const pathname = usePathname();
 
-  const activeRoute =
-    dashboardRoutes.find(
-      (route) => route.href.length > 0 && pathname.includes(route.href)
-    ) || dashboardRoutes[0];
+  const activeRoute = dashboardRoutes.reduce((bestMatch, route) => {
+    if (
+      pathname.startsWith(route.href) &&
+      (!bestMatch || route.href.length > bestMatch.href.length)
+    ) {
+      return route;
+    }
+    return bestMatch;
+  }, dashboardRoutes[0] || null);
 
   return (
     <div className="hidden relative md:block min-w-[280px] max-w-[280px] h-screen overflow-hidden w-full bg-primary/5 dark:bg-secondary/30 dark:text-foreground text-muted-foreground border-r-2 border-separate">
@@ -32,7 +37,7 @@ const DashboardSidebar: FC = () => {
         {dashboardRoutes.map((route) => (
           <Link
             key={route.label}
-            href={`/${route.href}`}
+            href={route.href}
             className={buttonVariants({
               variant:
                 activeRoute.href === route.href

@@ -71,7 +71,7 @@ const ExecutionsTable: FC<ExecutionsTableProps> = ({
                 className="cursor-pointer"
                 onClick={() => {
                   router.push(
-                    `/workflow/runs/${execution.workflowId}/${execution.id}`
+                    `/dashboard/workflow/runs/${execution.workflowId}/${execution.id}`
                   );
                 }}
               >

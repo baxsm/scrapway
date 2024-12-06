@@ -1,9 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { FC, ReactNode, useState } from "react";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-// import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { FC, ReactNode } from "react";
 import NextTopLoader from "nextjs-toploader";
 
 const NextThemesProvider = dynamic(
@@ -18,11 +16,9 @@ interface AppProvidersProps {
 }
 
 const AppProviders: FC<AppProvidersProps> = ({ children }) => {
-  const [queryClient] = useState(() => new QueryClient());
-
   return (
-    <QueryClientProvider client={queryClient}>
-      <NextTopLoader color="orange" showSpinner={false}/>
+    <>
+      <NextTopLoader color="orange" showSpinner={false} />
       <NextThemesProvider
         attribute="class"
         defaultTheme="light"
@@ -32,8 +28,7 @@ const AppProviders: FC<AppProvidersProps> = ({ children }) => {
       >
         {children}
       </NextThemesProvider>
-      {/* <ReactQueryDevtools /> */}
-    </QueryClientProvider>
+    </>
   );
 };
 

@@ -11,7 +11,7 @@ interface LogoProps {
 const Logo: FC<LogoProps> = ({ fontSize = "text-2xl", iconSize = 20 }) => {
   return (
     <Link
-      href="/"
+      href="/dashboard"
       className={cn(
         "text-2xl font-extrabold flex items-center gap-2",
         fontSize

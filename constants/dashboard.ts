@@ -2,22 +2,22 @@ import { Coins, Home, Layers2, ShieldCheck } from "lucide-react";
 
 export const dashboardRoutes = [
   {
-    href: "",
+    href: "/dashboard",
     label: "Home",
     icon: Home,
   },
   {
-    href: "workflows",
+    href: "/dashboard/workflows",
     label: "Workflows",
     icon: Layers2,
   },
   {
-    href: "credentials",
+    href: "/dashboard/credentials",
     label: "Credentials",
     icon: ShieldCheck,
   },
   {
-    href: "billing",
+    href: "/dashboard/billing",
     label: "Billing",
     icon: Coins,
   },

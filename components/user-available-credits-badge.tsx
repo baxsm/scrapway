@@ -16,7 +16,7 @@ const UserAvailableCreditsBadge: FC = () => {
 
   return (
     <Link
-      href="/billing"
+      href="/dashboard/billing"
       className={cn(
         "w-full space-x-2 items-center",
         buttonVariants({ variant: "outline" })

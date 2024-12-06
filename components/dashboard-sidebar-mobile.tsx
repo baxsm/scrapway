@@ -15,10 +15,15 @@ const DashboardSidebarMobile: FC = () => {
 
   const [isOpen, setIsOpen] = useState(false);
 
-  const activeRoute =
-    dashboardRoutes.find(
-      (route) => route.href.length > 0 && pathname.includes(route.href)
-    ) || dashboardRoutes[0];
+  const activeRoute = dashboardRoutes.reduce((bestMatch, route) => {
+    if (
+      pathname.startsWith(route.href) &&
+      (!bestMatch || route.href.length > bestMatch.href.length)
+    ) {
+      return route;
+    }
+    return bestMatch;
+  }, dashboardRoutes[0] || null);
 
   return (
     <div className="block border-separate bg-background md:hidden">
@@ -40,7 +45,7 @@ const DashboardSidebarMobile: FC = () => {
               {dashboardRoutes.map((route) => (
                 <Link
                   key={route.label}
-                  href={`/${route.href}`}
+                  href={route.href}
                   className={buttonVariants({
                     variant:
                       activeRoute.href === route.href

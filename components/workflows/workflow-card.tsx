@@ -43,7 +43,7 @@ const WorkflowCard: FC<WorkflowCardProps> = ({ workflow }) => {
             <h3 className="text-base font-bold text-muted-foreground flex items-center">
               <TooltipWrapper content={workflow.description || ""}>
                 <Link
-                  href={`/workflow/editor/${workflow.id}`}
+                  href={`/dashboard/workflow/editor/${workflow.id}`}
                   className="flex items-center hover:underline"
                 >
                   {workflow.name}
@@ -67,7 +67,7 @@ const WorkflowCard: FC<WorkflowCardProps> = ({ workflow }) => {
         <div className="flex items-center space-x-2">
           {!isDraft && <RunButton workflowId={workflow.id} />}
           <Link
-            href={`/workflow/editor/${workflow.id}`}
+            href={`/dashboard/workflow/editor/${workflow.id}`}
             className={cn(
               buttonVariants({
                 variant: "outline",
