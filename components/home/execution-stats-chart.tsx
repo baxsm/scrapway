@@ -91,7 +91,7 @@ const ExecutionStatsChart: FC<ExecutionStatsChartProps> = ({ data }) => {
               fill="var(--color-failed)"
               fillOpacity={0.6}
               stroke="var(--color-failed)"
-              stackId="a"
+              stackId="b"
             />
           </AreaChart>
         </ChartContainer>
