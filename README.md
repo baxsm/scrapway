@@ -1,101 +1,8 @@
-# 🚀 Scrapway: Web Scraping Workflow Builder & Runner
+# Scrapway
 
-**Scrapway** allows users to create powerful data scraping workflows and execute them either manually or via cron jobs. With an intuitive UI and support for various tasks such as user interactions, data extraction, storage, and result delivery – you can easily automate scraping operations with minimal effort.
+A visual web scraping workflow builder. Create scraping tasks, connect them in a flow-based editor, and run them manually or on a schedule.
 
-## Features ✨
-
-- **Workflow Builder**: Use React Flow to create and design scraping tasks visually.
-- **User Interactions**: Automate tasks like navigating to URLs, filling inputs, clicking elements, and scrolling to specific elements.
-- **Data Extraction**: Extract raw HTML, specific text, or use AI-based extraction techniques.
-- **Data Storage**: Read and write properties from JSON files, or store your scraping results conveniently.
-- **Timing Controls**: Add flexibility by waiting for elements before proceeding with actions.
-- **Result Delivery**: Deliver scraping results via Webhook.
-- **Scheduling**: Set up cron jobs to automate running workflows at specific intervals.
-
----
-
-## Task List 📝
-
-Here is an overview of the tasks available to be added and run within the workflow:
-
-### User Interactions 🖱️
-
-- `NAVIGATE_URL`: Navigate to a specific URL.
-- `FILL_INPUT`: Fill an input field.
-- `CLICK_ELEMENT`: Simulate a click event on an element.
-- `SCROLL_TO_ELEMENT`: Scroll to a particular element on the page.
-
-### Data Extraction 🛠️
-
-- `PAGE_TO_HTML`: Extract the entire page as HTML.
-- `EXTRACT_TEXT_FROM_ELEMENT`: Extract text from a specific element.
-- `EXTRACT_WITH_AI`: Use AI to extract and analyze content from the page.
-
-### Data Storage 🗃️
-
-- `READ_PROPERTY_FROM_JSON`: Read data from a JSON file.
-- `ADD_PROPERTY_TO_JSON`: Add or update properties in a JSON file.
-
-### Timing Controls ⏳
-
-- `WAIT_FOR_ELEMENT`: Wait for an element to appear before proceeding to the next task.
-
-### Results Delivery 📬
-
-- `DELIVER_VIA_WEBHOOK`: Send the results to a Webhook URL.
-
----
-
-## Getting Started 🔧
-
-### Prerequisites
-
-Make sure you have the following installed before running the project:
-
-- [Node.js](https://nodejs.org/)
-- npm or yarn
-
-### Installation
-
-Clone the repository and install dependencies:
-
-```bash
-git clone https://github.com/baxsm/scrapway.git
-cd scrapway
-npm install --legacy-peer-deps
-```
-
-### Running the Project
-
-To start the project locally:
-
-```bash
-npm run dev
-```
-
-Visit `http://localhost:3000` to start building workflows!
-
-### Building for Production
-
-To create a production build:
-
-```bash
-npm run build
-```
-
----
-
-## How to Use 🚴‍♂️
-
-1. **Open the Workflow Editor**: Use the visual interface based on React Flow to drag and drop tasks into your workflow.
-2. **Define Tasks**: Choose tasks from categories like **User Interactions**, **Data Extraction**, etc.
-3. **Run or Schedule**: Once the workflow is complete, either run it manually or schedule the execution using a cron job.
-
----
-
-## Screenshots 🖼️
-
-### Workflow Editor
+## Screenshots
 
 ![Home](/public/home.png)
 ![Workflows](/public/workflows.png)
@@ -103,4 +10,43 @@ npm run build
 ![Credentials](/public/credentials.png)
 ![Billing](/public/billing.png)
 
----
+## What it does
+
+- Build scraping workflows visually using a drag-and-drop editor (React Flow)
+- Automate browser actions like navigating to URLs, filling inputs, clicking elements, and scrolling
+- Extract data from pages as raw HTML, specific text, or using AI-based extraction
+- Store results in JSON, deliver via webhook
+- Schedule workflows to run automatically with cron jobs
+- Manage credentials and billing through the dashboard
+
+## Available tasks
+
+**Browser actions** - Navigate to URL, fill input fields, click elements, scroll to elements
+
+**Data extraction** - Full page HTML, text from specific elements, AI-powered extraction
+
+**Storage** - Read/write properties from JSON files
+
+**Timing** - Wait for elements to appear before continuing
+
+**Delivery** - Send results to a webhook URL
+
+## Tech stack
+
+- Next.js 15, React 19, TypeScript, TailwindCSS, shadcn/ui
+- React Flow for the visual editor
+- Puppeteer and Cheerio for scraping
+- OpenAI for AI-based extraction
+- Prisma with PostgreSQL
+- Clerk for auth, Stripe for billing
+
+## Getting started
+
+```bash
+git clone https://github.com/baxsm/scrapway.git
+cd scrapway
+npm install --legacy-peer-deps
+npm run dev
+```
+
+Open `http://localhost:3000` to start building workflows.
